@@ -1,0 +1,331 @@
+@import '../../scss/variables.scss';
+
+.enjoy {
+    padding-top: 35px;
+
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+
+        h1 {
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 73px;
+            color: $primary;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 135%;
+            color: $secondary;
+        }
+    }
+}
+
+.company {
+    padding-top: 140px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h2 {
+            color: $primary;
+        }
+
+        &__body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+
+            &__left {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 100px;
+                row-gap: 50px;
+
+                &__item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    span,
+                    p {
+                        color: $secondary;
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: 42px;
+                        line-height: 51px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        line-height: 135%;
+                    }
+                }
+            }
+
+            &__right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+
+                p {
+                    max-width: 580px;
+                    width: 100%;
+                    font-size: 18px;
+                    line-height: 135%;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+    }
+}
+
+.aboutUs {
+    padding-top: 167px;
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        &__top {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+
+            h2 {
+                color: $primary;
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 22px;
+                color: $tertiary;
+            }
+        }
+
+
+        &__article {
+            padding: 80px 114px;
+            background-color: $secondaryBg;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            p {
+                font-size: 18px;
+                line-height: 135%;
+                color: $secondary;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+    }
+}
+
+.brands {
+    padding-top: 142px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+
+        h2 {
+            color: $primary;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            color: $secondary;
+            max-width: 580px;
+            width: 100%;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+}
+
+.news {
+    padding-top: 140px;
+    padding-bottom: 128px;
+
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        h2 {
+            color: $primary;
+        }
+
+        p {
+            max-width: 580px;
+            width: 100%;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            color: $secondary;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        justify-content: space-between;
+
+        &__article {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &__head {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                span {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $tertiary;
+                }
+
+                h3 {
+                    color: $secondary;
+                    font-weight: 700;
+                    font-size: 22px;
+                    line-height: 27px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 135%;
+                color: $secondary;
+            }
+
+            &__link {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.form {
+    background-color: $secondaryBg;
+    padding: 66px 0;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    h2 {
+        color: $primary;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+
+
+
+        p {
+            font-size: 18px;
+            line-height: 135%;
+            color: $secondary;
+            max-width: 385px;
+            width: 100%;
+        }
+    }
+}
+
+.questions {
+    padding-top: 140px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+
+        h2 {
+            color: $primary;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: $secondary;
+        }
+    }
+}

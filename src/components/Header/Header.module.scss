@@ -1,0 +1,37 @@
+@import '../../scss/variables.scss';
+
+header {
+    padding: 20px 0;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: center;
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            li {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 135%;
+                color: $secondary;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            .active {
+                color: $primary;
+            }
+        }
+    }
+
+
+
+}
