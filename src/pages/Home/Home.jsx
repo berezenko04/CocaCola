@@ -8,14 +8,9 @@ import CocaCola from '../../assets/img/coca-cola.webp'
 import ButtonPrimary from '../../components/ButtonPrimary/ButtonPrimary'
 import OurCompany from '../../assets/img/our-company.webp'
 import AboutUs from '../../assets/img/learn-us.webp'
-import BrandItem from '../../components/BrandItem/BrandItem'
 import Empty from '../../assets/img/empty.webp'
-
-import { ReactComponent as CocaColaIcon } from '../../assets/icons/coca-cola.svg'
-import { ReactComponent as FantaIcon } from '../../assets/icons/fanta.svg'
-import { ReactComponent as SpriteIcon } from '../../assets/icons/sprite.svg'
-import { ReactComponent as SchweppesIcon } from '../../assets/icons/schweppes.svg'
 import Accordeon from '../../components/Accordeon/Accordeon'
+import OurBrands from '../../components/OurBrands/OurBrands'
 
 
 const Home = () => {
@@ -23,29 +18,6 @@ const Home = () => {
     const companyItemAchieves = [
         '200+', '800+', '300+', '130+'
     ];
-
-    const brands = [
-        {
-            imgUrl: 'cola.webp',
-            alt: 'CocaCola',
-            icon: <CocaColaIcon />
-        },
-        {
-            imgUrl: 'fanta.webp',
-            alt: 'Fanta',
-            icon: <FantaIcon />
-        },
-        {
-            imgUrl: 'sprite.webp',
-            alt: 'Sprite',
-            icon: <SpriteIcon />
-        },
-        {
-            imgUrl: 'schweppes.webp',
-            alt: 'Schweppes',
-            icon: <SchweppesIcon />
-        }
-    ]
 
     const theme = useSelector((state) => state.theme.theme);
 
@@ -131,29 +103,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className={styles.brands}>
-                    <div className="container">
-                        <div className={styles.brands__wrapper}>
-                            <div className={styles.brands__top}>
-                                <h2>Наші бренди</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit ut aliquam, purus sit amet luctus venenatis
-                                </p>
-                            </div>
-                            <div className={styles.brands__list}>
-                                {brands.map((obj, index) => (
-                                    <BrandItem
-                                        key={index}
-                                        imgSrc={`./src/assets/img/${obj.imgUrl}`}
-                                        alt={obj.alt}
-                                        icon={obj.icon}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <OurBrands />
                 <section className={styles.news}>
                     <div className="container">
                         <div className={styles.news__wrapper}>
