@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './Header.module.scss'
 
-import { ReactComponent as Logo } from '../../assets/logo.svg'
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 import { setPageId } from '../../redux/slices/pageSlice'
 
 
@@ -37,11 +37,13 @@ const Header = () => {
                                 </Link>
                             </li>
                         ))}
-
+                        <li>
+                           
+                        </li>
                     </ul>
                 </nav>
             </div>
-        </header>
+        </header >
     )
 }
 

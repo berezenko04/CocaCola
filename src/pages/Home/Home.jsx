@@ -10,10 +10,11 @@ import AboutUs from '../../assets/img/learn-us.webp'
 import BrandItem from '../../components/BrandItem/BrandItem'
 import Empty from '../../assets/img/empty.webp'
 
-import { ReactComponent as CocaColaIcon } from '../../assets/coca-cola.svg'
-import { ReactComponent as FantaIcon } from '../../assets/fanta.svg'
-import { ReactComponent as SpriteIcon } from '../../assets/sprite.svg'
-import { ReactComponent as SchweppesIcon } from '../../assets/schweppes.svg'
+import { ReactComponent as CocaColaIcon } from '../../assets/icons/coca-cola.svg'
+import { ReactComponent as FantaIcon } from '../../assets/icons/fanta.svg'
+import { ReactComponent as SpriteIcon } from '../../assets/icons/sprite.svg'
+import { ReactComponent as SchweppesIcon } from '../../assets/icons/schweppes.svg'
+import Accordeon from '../../components/Accordeon/Accordeon'
 
 const Home = () => {
 
@@ -206,6 +207,9 @@ const Home = () => {
                                     Lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit ut aliquam
                                 </p>
+                            </div>
+                            <div className={styles.questions__accordeons}>
+                                <Accordeon />
                             </div>
                         </div>
                     </div>

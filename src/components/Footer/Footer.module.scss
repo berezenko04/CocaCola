@@ -1,0 +1,53 @@
+@import '../../scss/variables.scss';
+
+
+.footer {
+    padding: 50px 0 60px;
+    border-top: 1px solid $secondary;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    &__left {
+        display: flex;
+        justify-content: space-between;
+        gap: 115px;
+
+        &__categories {
+            display: flex;
+            justify-content: space-between;
+            gap: 56px;
+            align-items: flex-start;
+
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                span {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $tertiary;
+                }
+
+                &__link {
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

@@ -4,13 +4,23 @@ h3,
 h4,
 h5,
 h6 {
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
+h1 {
+    font-size: 60px;
+    line-height: 73px;
+}
+
 h2 {
-    font-weight: 700;
     font-size: 40px;
     line-height: 49px;
 }
 
+p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+}
