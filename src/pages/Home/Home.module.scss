@@ -102,11 +102,18 @@
 
         &__article {
             padding: 80px 114px;
-            background-color: $secondaryBg;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 16px;
+
+            &__light {
+                background-color: $secondaryBgLight;
+            }
+
+            &__dark {
+                background-color: $secondaryBgDark;
+            }
         }
     }
 
@@ -223,8 +230,15 @@
 }
 
 .form {
-    background-color: $secondaryBg;
     padding: 66px 0;
+
+    &__light {
+        background-color: $secondaryBgLight;
+    }
+
+    &__dark {
+        background-color: $secondaryBgDark;
+    }
 
     &__wrapper {
         display: flex;

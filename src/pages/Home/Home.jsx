@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import styles from './Home.module.scss'
 
@@ -15,6 +16,7 @@ import { ReactComponent as FantaIcon } from '../../assets/icons/fanta.svg'
 import { ReactComponent as SpriteIcon } from '../../assets/icons/sprite.svg'
 import { ReactComponent as SchweppesIcon } from '../../assets/icons/schweppes.svg'
 import Accordeon from '../../components/Accordeon/Accordeon'
+
 
 const Home = () => {
 
@@ -44,6 +46,8 @@ const Home = () => {
             icon: <SchweppesIcon />
         }
     ]
+
+    const theme = useSelector((state) => state.theme.theme);
 
     return (
         <Layout>
@@ -105,7 +109,10 @@ const Home = () => {
                                         як ми працюємо та розвиваємося в Україні та світі.
                                     </p>
                                 </div>
-                                <div className={styles.aboutUs__content__article}>
+                                <div className={`${styles.aboutUs__content__article}
+                                                ${theme === 'light' ? styles.aboutUs__content__article__light :
+                                        styles.aboutUs__content__article__dark}`}
+                                >
                                     <p>В Україні «Кока-Кола» однією з перших міжнародних компаній виявила
                                         зацікавленість працювати на місцевому ринку. Компанія інвестує в
                                         економіку нашої країни від 1992 року.
@@ -181,7 +188,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className={styles.form}>
+                <section className={`${styles.form} ${theme === 'light' ? styles.form__light : styles.form__dark}`}>
                     <div className="container">
                         <div className={styles.form__wrapper}>
                             <h2>Залиште заявку</h2>
@@ -215,7 +222,7 @@ const Home = () => {
                     </div>
                 </section>
             </>
-        </Layout>
+        </Layout >
     )
 }
 

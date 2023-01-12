@@ -18,20 +18,42 @@ header {
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 135%;
-                color: $secondary;
                 transition: all .3s ease-in-out;
+                color: $secondary;
 
-                &:hover {
+            }
+
+            .light {
+
+                &:hover,
+                &Link {
                     color: $primary;
                 }
             }
 
-            .active {
-                color: $primary;
+            .dark {
+
+                &:hover,
+                &Link {
+                    color: $white;
+                }
+            }
+
+            .themeSwitch {
+                cursor: pointer;
+            }
+
+            .moon {
+                path {
+                    fill: $secondary;
+                }
+            }
+
+            .sun {
+                path {
+                    fill: $white;
+                }
             }
         }
     }
 }
-
-
-

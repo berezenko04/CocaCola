@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './Footer.module.scss'
 
-import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
+import Logo from '../../components/Logo/Logo'
 import { ReactComponent as TwitterIcon } from '../../assets/icons/twitter.svg'
 import { ReactComponent as YoutubeIcon } from '../../assets/icons/youtube.svg'
 import { ReactComponent as FacebookIcon } from '../../assets/icons/facebook.svg'

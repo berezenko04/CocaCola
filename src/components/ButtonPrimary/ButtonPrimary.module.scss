@@ -2,19 +2,33 @@
 
 
 .button {
-    background-color: $primary;
-    padding: 18px 32px;
     color: $white;
+    padding: 18px 32px;
     font-weight: 500;
     line-height: 19px;
     text-transform: uppercase;
-    border: 1px solid $primary;
     transition: all .3s ease-in;
     display: flex;
     justify-content: center;
+}
+
+.light {
+    background-color: $primary;
+    border: 1px solid $primary;
 
     &:hover {
         background-color: transparent;
         color: $primary;
+    }
+}
+
+.dark {
+    background-color: transparent;
+    color: $white;
+    border: 1px solid $white;
+
+    &:hover {
+        background-color: $white;
+        color: $black;
     }
 }

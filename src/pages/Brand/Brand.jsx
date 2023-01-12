@@ -1,10 +1,16 @@
 import styles from './Brand.module.scss'
 
+import Layout from '../../layouts/MainLayout'
+
 const Brand = () => {
     return (
-        <div>
-
-        </div>
+        <Layout>
+            <>
+                <section>
+                    
+                </section>
+            </>
+        </Layout>
     )
 }
 

@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import './App.scss'
 
@@ -6,7 +7,7 @@ import Home from './pages/Home/Home'
 import Contact from './pages/Contact/Contact'
 import Brand from './pages/Brand/Brand'
 import NotFound from './pages/NotFound/NotFound'
-import { useSelector } from 'react-redux'
+
 
 function App() {
 
