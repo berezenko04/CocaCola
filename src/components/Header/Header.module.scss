@@ -5,10 +5,16 @@
 
     &__light {
         background-color: $secondaryBgLight;
+        -webkit-box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
+        -moz-box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
+        box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
     }
 
     &__dark {
         background-color: $secondaryBgDark;
+        -webkit-box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
+        -moz-box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
+        box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
     }
 }
 

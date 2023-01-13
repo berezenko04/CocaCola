@@ -29,6 +29,14 @@
                 flex-direction: column;
                 gap: 10px;
 
+                &__light:hover a {
+                    color: $primary;
+                }
+
+                &__dark:hover a {
+                    color: $white;
+                }
+
                 span {
                     font-weight: 500;
                     font-size: 18px;
@@ -36,10 +44,11 @@
                     color: $tertiary;
                 }
 
-                &__link {
+                a {
                     font-size: 18px;
                     line-height: 22px;
                     color: $secondary;
+                    transition: all .3s ease-in-out;
                 }
             }
         }
@@ -49,5 +58,17 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
+        &__light:hover a {
+            svg path {
+                fill: $primary;
+            }
+        }
+
+        &__dark:hover a {
+            svg path {
+                fill: $white;
+            }
+        }
     }
 }

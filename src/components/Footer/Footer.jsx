@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import styles from './Footer.module.scss'
 
@@ -7,6 +8,7 @@ import { ReactComponent as TwitterIcon } from '../../assets/icons/twitter.svg'
 import { ReactComponent as YoutubeIcon } from '../../assets/icons/youtube.svg'
 import { ReactComponent as FacebookIcon } from '../../assets/icons/facebook.svg'
 import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg'
+
 
 const Footer = () => {
 
@@ -20,6 +22,8 @@ const Footer = () => {
         <TwitterIcon />, <YoutubeIcon />, <FacebookIcon />, <InstagramIcon />
     ];
 
+    const theme = useSelector((state) => state.theme.theme);
+
     return (
         <div className="container">
             <footer className={styles.footer}>
@@ -31,10 +35,12 @@ const Footer = () => {
                                 <ul className={styles.footer__left__categories__item} key={index}>
                                     <li><span>{obj.title}</span></li>
                                     {obj.links.map((link, index) => (
-                                        <li key={index}>
+                                        <li
+                                            key={index}
+                                            className={theme === 'light' ? styles.footer__left__categories__item__light : styles.footer__left__categories__item__dark}
+                                        >
                                             <Link
                                                 to=''
-                                                className={styles.footer__left__categories__item__link}
                                             >
                                                 {link}
                                             </Link>
@@ -46,12 +52,17 @@ const Footer = () => {
                     </div>
                     <ul className={styles.footer__socials}>
                         {socialIcons.map((icon, index) => (
-                            <li key={index}><Link to=''>{icon}</Link></li>
+                            <li
+                                key={index}
+                                className={theme === 'light' ? styles.footer__socials__light : styles.footer__socials__dark}
+                            >
+                                <Link to=''>{icon}</Link>
+                            </li>
                         ))}
                     </ul>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     )
 }
 
