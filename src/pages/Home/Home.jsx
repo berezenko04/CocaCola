@@ -11,6 +11,7 @@ import AboutUs from '../../assets/img/learn-us.webp'
 import Empty from '../../assets/img/empty.webp'
 import Accordeon from '../../components/Accordeon/Accordeon'
 import OurBrands from '../../components/OurBrands/OurBrands'
+import { useEffect, useState } from 'react'
 
 
 const Home = () => {
@@ -21,9 +22,12 @@ const Home = () => {
 
     const theme = useSelector((state) => state.theme.theme);
 
+   
+
     return (
         <Layout>
             <>
+
                 <section className={styles.enjoy}>
                     <div className="container">
                         <div className={styles.enjoy__wrapper}>
@@ -81,10 +85,7 @@ const Home = () => {
                                         як ми працюємо та розвиваємося в Україні та світі.
                                     </p>
                                 </div>
-                                <div className={`${styles.aboutUs__content__article}
-                                                ${theme === 'light' ? styles.aboutUs__content__article__light :
-                                        styles.aboutUs__content__article__dark}`}
-                                >
+                                <div className={styles.aboutUs__content__article}>
                                     <p>В Україні «Кока-Кола» однією з перших міжнародних компаній виявила
                                         зацікавленість працювати на місцевому ринку. Компанія інвестує в
                                         економіку нашої країни від 1992 року.

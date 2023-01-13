@@ -101,19 +101,11 @@
 
 
         &__article {
-            padding: 80px 114px;
+            padding: 80px 0;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 16px;
-
-            &__light {
-                background-color: $secondaryBgLight;
-            }
-
-            &__dark {
-                background-color: $secondaryBgDark;
-            }
         }
     }
 

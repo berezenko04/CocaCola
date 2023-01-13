@@ -6,6 +6,7 @@ import styles from './Header.module.scss'
 import Logo from '../../components/Logo/Logo'
 import { setPageId } from '../../redux/slices/pageSlice'
 import { setTheme } from '../../redux/slices/themeSlice'
+import { setScrollYOffset } from '../../redux/slices/scrollSlice'
 import { ReactComponent as MoonIcon } from '../../assets/icons/moon.svg'
 import { ReactComponent as SunIcon } from '../../assets/icons/sun.svg'
 
@@ -14,6 +15,7 @@ const Header = () => {
     const currentPage = useSelector((state) => state.page.currentPage);
     const dispatch = useDispatch();
     const theme = useSelector((state) => state.theme.theme);
+    const scrollYOffset = useSelector((state) => state.scroll.scrollYOffset);
 
     const navLinks = [
         { name: 'Головна', link: '/CocaCola' },
@@ -21,8 +23,11 @@ const Header = () => {
         { name: 'Дізнайся про нас', link: '/CocaCola/contact' }
     ];
 
+    window.onscroll = () => dispatch(setScrollYOffset(window.pageYOffset));
+
+
     return (
-        <header>
+        <header className={theme === 'light' ? (scrollYOffset > 80 && styles.header__light) : (scrollYOffset > 80 && styles.header__dark)}>
             <div className="container">
                 <nav>
                     <Link to='/CocaCola'>

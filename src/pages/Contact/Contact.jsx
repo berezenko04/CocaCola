@@ -85,8 +85,6 @@ export const Contact = () => {
                         </div>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20255.688596157335!2d30.861921378759764!3d50.60926083593123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d527ad86241deb%3A0x3ef448cf316dbfcc!2sIp%20%22Koka-Kola%20Beveridzhyz%20Ukraine%20Limited%22!5e0!3m2!1sen!2sua!4v1673606208578!5m2!1sen!2sua"
-                            width="580"
-                            height="700"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
