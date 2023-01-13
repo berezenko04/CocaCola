@@ -1,14 +1,17 @@
-import styles from './Logo.module.scss'
+import { useSelector } from 'react-redux'
 
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg'
-import { useSelector } from 'react-redux'
+import { ReactComponent as LogoGradientIcon } from '../../assets/icons/logo-gradient.svg'
+
 
 const Logo = () => {
 
     const theme = useSelector((state) => state.theme.theme);
 
     return (
-        <LogoIcon className={theme === 'dark' ? styles.dark : ''} />
+        <>
+            {theme === 'light' ? <LogoIcon /> : <LogoGradientIcon />}
+        </>
     )
 }
 

@@ -1,0 +1,49 @@
+@import '../../scss/variables.scss';
+
+.head {
+    padding-top: 130px;
+    padding-bottom: 150px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        p {
+            max-width: 630px;
+            width: 100%;
+        }
+    }
+}
+
+.colaInUkraine {
+    padding: 48px 0;
+    width: 100%;
+    margin: 100px 0;
+
+    &__light {
+        background-color: $secondaryBgLight;
+    }
+
+    &__dark {
+        background-color: $secondaryBgDark;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}

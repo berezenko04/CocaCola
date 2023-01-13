@@ -9,9 +9,22 @@ import Brand from './pages/Brand/Brand'
 import NotFound from './pages/NotFound/NotFound'
 
 
+
 function App() {
 
   const theme = useSelector((state) => state.theme.theme);
+
+
+
+  // localStorage.setItem('theme', theme);
+
+  // const getTheme = () => {
+  //   if (typeof window !== 'undefined') {
+  //     const saved = localStorage.getItem('theme');
+  //     const initial = saved !== null ? JSON.parse(saved) : theme;
+  //     return initial;
+  //   }
+  // }
 
   return (
     <div className={theme}>
