@@ -8,3 +8,10 @@ $mainBgLight: #FAFAFA;
 $mainBgDark: #121212;
 $secondaryBgLight: #F3F3F3;
 $secondaryBgDark: #2B2B2B;
+
+@mixin linearGradient {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.35) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

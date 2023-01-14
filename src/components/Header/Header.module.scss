@@ -62,6 +62,8 @@ header {
 
             .themeSwitch {
                 cursor: pointer;
+                width: 24px;
+                height: 24px;
             }
 
             .moon {
@@ -74,6 +76,12 @@ header {
                 path {
                     fill: $white;
                 }
+            }
+
+            .moon,
+            .sun {
+                width: 24px;
+                height: 24px;
             }
         }
     }

@@ -3,8 +3,6 @@
 @import './scss/variables.scss';
 
 
-
-
 .light {
     background-color: $mainBgLight;
 
@@ -31,10 +29,7 @@
     h4,
     h5,
     h6 {
-        background-image: linear-gradient(180deg, #FAFAFA 0%, #7A7A7A 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include linearGradient;
     }
 
     p {

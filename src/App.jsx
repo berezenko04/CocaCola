@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 
 import './App.scss'
@@ -9,25 +9,28 @@ import Home from './pages/Home/Home'
 import Contact from './pages/Contact/Contact'
 import Brand from './pages/Brand/Brand'
 import NotFound from './pages/NotFound/NotFound'
+import { setTheme } from './redux/slices/themeSlice'
 
 
 
 function App() {
 
   const theme = useSelector((state) => state.theme.theme);
+  const dispatch = useDispatch();
 
 
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
 
-  // localStorage.setItem('theme', theme);
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme');
+      dispatch(setTheme(saved));
+      console.log(saved);
+    }
+  }, [theme])
 
-  // const getTheme = () => {
-  //   if (typeof window !== 'undefined') {
-  //     const saved = localStorage.getItem('theme');
-  //     const initial = saved !== null ? JSON.parse(saved) : theme;
-  //     return initial;
-  //   }
-  // }
 
+  
   return (
     <div className={theme}>
       <Routes>

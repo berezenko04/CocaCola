@@ -27,7 +27,7 @@ const Header = () => {
 
 
     return (
-        <header className={theme === 'light' ? (scrollYOffset > 80 && styles.header__light) : (scrollYOffset > 80 && styles.header__dark)}>
+        <header className={theme === 'light' ? (scrollYOffset > 80 ? styles.header__light : '') : (scrollYOffset > 80 ? styles.header__dark : '')}>
             <div className="container">
                 <nav>
                     <Link to='/CocaCola'>
