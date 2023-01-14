@@ -5,11 +5,19 @@
     flex-direction: column;
     gap: 42px;
 
+    @media screen and (max-width: 980px) {
+        gap: 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        gap: 20px;
+    }
+
 
     &__default {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 24px;
         border-top: 1px solid $secondary;
         padding: 30px 0 26px;

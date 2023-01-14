@@ -5,11 +5,17 @@
     padding: 50px 0 60px;
     border-top: 1px solid $secondary;
 
+    @media screen and (max-width: 775px) {
+        padding: 35px 0 45px;
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
         gap: 40px;
         align-items: flex-start;
+
+
     }
 
     &__left {
@@ -17,11 +23,22 @@
         justify-content: space-between;
         gap: 115px;
 
+        @media screen and (max-width: 775px) {
+            flex-direction: column;
+            gap: 60px;
+        }
+
+
         &__categories {
             display: flex;
             justify-content: space-between;
             gap: 56px;
             align-items: flex-start;
+
+            @media screen and (max-width:550px) {
+                gap: 20px;
+                flex-direction: column;
+            }
 
 
             &__item {
@@ -58,6 +75,16 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
+        @media screen and (max-width:624px) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width:550px) {
+            flex-direction: row;
+        }
+
+
 
         &__light:hover a {
             svg path {

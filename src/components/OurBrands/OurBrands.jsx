@@ -1,10 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+
 import styles from './OurBrands.module.scss'
+import 'swiper/css';
+import "swiper/css/navigation";
 
 import BrandItem from '../../components/BrandItem/BrandItem'
 import { ReactComponent as CocaColaIcon } from '../../assets/icons/coca-cola.svg'
 import { ReactComponent as FantaIcon } from '../../assets/icons/fanta.svg'
 import { ReactComponent as SpriteIcon } from '../../assets/icons/sprite.svg'
 import { ReactComponent as SchweppesIcon } from '../../assets/icons/schweppes.svg'
+import { setScreenWidth } from '../../redux/slices/screenWidthSlice'
+
+
 
 const OurBrands = () => {
 
@@ -30,6 +39,23 @@ const OurBrands = () => {
             icon: <SchweppesIcon />
         }
     ]
+
+    const dispatch = useDispatch();
+    const screenWidth = useSelector((state) => state.screen.screenWidth);
+    // window.onresize = () => dispatch(setScreenWidth(window.innerWidth));
+
+
+    // const swiperAmountSlides = () => {
+    //     if (screenWidth <= 1280 && screenWidth > 1076) {
+    //         return 3;
+    //     } else if (screenWidth < 1076 && screenWidth > 740) {
+    //         return 2;
+    //     } else if (screenWidth < 740 && screenWidth > 0) {
+    //         return 1;
+    //     }
+    // }
+
+
     return (
         <section className={styles.brands}>
             <div className="container">
@@ -53,8 +79,9 @@ const OurBrands = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
+
 
 export default OurBrands

@@ -11,7 +11,6 @@ import AboutUs from '../../assets/img/learn-us.webp'
 import Empty from '../../assets/img/empty.webp'
 import Accordeon from '../../components/Accordeon/Accordeon'
 import OurBrands from '../../components/OurBrands/OurBrands'
-import { useEffect, useState } from 'react'
 
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
 
     const theme = useSelector((state) => state.theme.theme);
 
-   
+
 
     return (
         <Layout>

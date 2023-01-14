@@ -19,15 +19,15 @@ function App() {
   const dispatch = useDispatch();
 
 
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
+  // useEffect(() => {
+  //   localStorage.setItem('theme', theme);
 
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      dispatch(setTheme(saved));
-      console.log(saved);
-    }
-  }, [theme])
+  //   if (typeof window !== 'undefined') {
+  //     const saved = localStorage.getItem('theme');
+  //     dispatch(setTheme(saved));
+  //     console.log(saved);
+  //   }
+  // }, [theme])
 
 
   

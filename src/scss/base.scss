@@ -12,15 +12,47 @@ h6 {
 h1 {
     font-size: 60px;
     line-height: 73px;
+
+
+    @media screen and (max-width: 845px) {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    @media screen and (max-width: 762px) {
+        font-size: 46px;
+    }
+
+    @media screen and (max-width: 690px) {
+        font-size: 40px;
+        line-height: 50px;
+    }
 }
 
 h2 {
     font-size: 40px;
     line-height: 49px;
+
+    @media screen and (max-width: 1025px) {
+        font-size: 34px;
+    }
+
 }
 
 p {
     font-weight: 400;
     font-size: 18px;
     line-height: 135%;
+
+    @media screen and (max-width: 1025px) {
+        font-size: 16px;
+        line-height: 115%;
+    }
+}
+
+
+h3 {
+    @media screen and (max-width: 860px) {
+        font-size: 20px !important;
+    }
 }

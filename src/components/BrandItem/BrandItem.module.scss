@@ -4,6 +4,11 @@
     align-items: center;
     justify-content: center;
 
+    img {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
     &__icon {
         position: absolute;
     }
