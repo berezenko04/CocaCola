@@ -26,7 +26,6 @@ const Home = () => {
     return (
         <Layout>
             <>
-
                 <section className={styles.enjoy}>
                     <div className="container">
                         <div className={styles.enjoy__wrapper}>

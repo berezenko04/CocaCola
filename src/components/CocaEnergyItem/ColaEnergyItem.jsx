@@ -5,7 +5,7 @@ import styles from './ColaEnergyItem.module.scss'
 import { ReactComponent as BookmarkIcon } from '../../assets/icons/bookmark.svg'
 
 
-const ColaEnergyItem = ({ title, imgSrc, peculiarities, reversed }) => {
+const ColaEnergyItem = ({ title, imgSrc, peculiarities, reversed = false }) => {
 
     const nutritions = [
         'Объем на 100 мл',

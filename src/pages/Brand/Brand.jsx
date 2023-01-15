@@ -37,7 +37,7 @@ const Brand = () => {
                 </section>
                 <ColaEnergyItem
                     title={'«Кока-Кола Энерджи»'}
-                    imgSrc={'./src/assets/img/cola-energy-light.webp'}
+                    imgSrc={'images/cola-energy-light.webp'}
                     peculiarities={peculiaritiesWithSugar}
                 />
                 <section className={`${styles.colaInUkraine} ${theme === 'light' ? styles.colaInUkraine__light : styles.colaInUkraine__dark}`}>
@@ -57,7 +57,7 @@ const Brand = () => {
                 </section>
                 <ColaEnergyItem
                     title={'«Кока-Кола Энерджи Без сахара»'}
-                    imgSrc={'./src/assets/img/cola-energy-dark.webp'}
+                    imgSrc={'images/cola-energy-dark.webp'}
                     peculiarities={peculiaritiesWithoutSugar}
                     reversed
                 />

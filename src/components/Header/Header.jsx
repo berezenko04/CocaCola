@@ -30,7 +30,7 @@ const Header = () => {
         <header className={theme === 'light' ? (scrollYOffset > 80 ? styles.header__light : '') : (scrollYOffset > 80 ? styles.header__dark : '')}>
             <div className="container">
                 <nav>
-                    <Link to='/CocaCola'>
+                    <Link to='/CocaCola/'>
                         <Logo />
                     </Link>
                     <ul>
