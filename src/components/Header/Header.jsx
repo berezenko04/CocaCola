@@ -11,6 +11,7 @@ import { setIsMenuOpened } from '../../redux/slices/menuSlice'
 import { ReactComponent as MoonIcon } from '../../assets/icons/moon.svg'
 import { ReactComponent as SunIcon } from '../../assets/icons/sun.svg'
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu-hamburger.svg'
+import { useEffect } from 'react'
 
 const Header = () => {
 
@@ -21,7 +22,7 @@ const Header = () => {
     const isMenuOpened = useSelector((state) => state.menu.isMenuOpened);
 
     const navLinks = [
-        { name: 'Головна', link: '/CocaCola' },
+        { name: 'Головна', link: '/CocaCola/' },
         { name: 'Наші бренди', link: '/CocaCola/brands' },
         { name: 'Дізнайся про нас', link: '/CocaCola/contact' }
     ];
@@ -32,9 +33,22 @@ const Header = () => {
         dispatch(setIsMenuOpened(!isMenuOpened));
     }
 
+    let scroll = scrollYOffset > 80;
+
+    const handleThemeChange = () => {
+        dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
+    }
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+        console.log(localStorage);
+    }, [theme])
+
+
+
 
     return (
-        <header className={theme === 'light' ? (scrollYOffset > 80 ? styles.header__light : '') : (scrollYOffset > 80 ? styles.header__dark : '')}>
+        <header className={theme === 'light' ? (scroll ? styles.header__light : '') : (scroll ? styles.header__dark : '')}>
             <div className="container">
                 <div className={styles.header__wrapper}>
                     <nav>
@@ -53,7 +67,7 @@ const Header = () => {
                                     </Link>
                                 </li>
                             ))}
-                            <li className={styles.themeSwitch} onClick={() => dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))}>
+                            <li className={styles.themeSwitch} onClick={handleThemeChange}>
                                 {theme === 'light' ? <MoonIcon className={styles.moon} /> : <SunIcon className={styles.sun} />}
                             </li>
                             <li className={styles.menuBlock} onClick={handleMenuClick}>
@@ -64,7 +78,11 @@ const Header = () => {
                     {isMenuOpened &&
                         <ul className={styles.menuBlock__opened}>
                             {navLinks.map((obj, index) => (
-                                <li key={index} className={theme === 'light' ? styles.light : styles.dark}>
+                                <li
+                                    key={index}
+                                    className={theme === 'light' ? styles.light : styles.dark}
+                                    onClick={() => dispatch(setIsMenuOpened(false))}
+                                >
                                     <Link
                                         className={theme === 'light' ? (currentPage === index ? styles.lightLink : '') : (currentPage === index ? styles.darkLink : '')}
                                         to={obj.link}

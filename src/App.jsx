@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import './App.scss'
 
@@ -11,21 +11,8 @@ import NotFound from './pages/NotFound/NotFound'
 
 function App() {
 
+  // const test = localStorage.getItem('theme');
   const theme = useSelector((state) => state.theme.theme);
-  const dispatch = useDispatch();
-
-
-  // useEffect(() => {
-  //   localStorage.setItem('theme', theme);
-
-  //   if (typeof window !== 'undefined') {
-  //     const saved = localStorage.getItem('theme');
-  //     dispatch(setTheme(saved));
-  //     console.log(saved);
-  //   }
-  // }, [theme])
-
-
 
   return (
     <div className={theme}>

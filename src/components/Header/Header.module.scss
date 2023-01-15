@@ -101,18 +101,8 @@ header {
         height: 24px;
 
         &__light {
-            svg path {
+            path {
                 fill: $secondary;
-
-            }
-        }
-
-
-        &__dark {
-            svg path {
-                fill: $white;
-                width: 24px;
-                height: 24px;
             }
         }
     }
