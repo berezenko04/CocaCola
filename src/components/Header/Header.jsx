@@ -7,8 +7,10 @@ import Logo from '../../components/Logo/Logo'
 import { setPageId } from '../../redux/slices/pageSlice'
 import { setTheme } from '../../redux/slices/themeSlice'
 import { setScrollYOffset } from '../../redux/slices/scrollSlice'
+import { setIsMenuOpened } from '../../redux/slices/menuSlice'
 import { ReactComponent as MoonIcon } from '../../assets/icons/moon.svg'
 import { ReactComponent as SunIcon } from '../../assets/icons/sun.svg'
+import { ReactComponent as MenuIcon } from '../../assets/icons/menu-hamburger.svg'
 
 const Header = () => {
 
@@ -16,6 +18,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const theme = useSelector((state) => state.theme.theme);
     const scrollYOffset = useSelector((state) => state.scroll.scrollYOffset);
+    const isMenuOpened = useSelector((state) => state.menu.isMenuOpened);
 
     const navLinks = [
         { name: 'Головна', link: '/CocaCola' },
@@ -25,31 +28,55 @@ const Header = () => {
 
     window.onscroll = () => dispatch(setScrollYOffset(window.pageYOffset));
 
+    const handleMenuClick = () => {
+        dispatch(setIsMenuOpened(!isMenuOpened));
+    }
+
 
     return (
         <header className={theme === 'light' ? (scrollYOffset > 80 ? styles.header__light : '') : (scrollYOffset > 80 ? styles.header__dark : '')}>
             <div className="container">
-                <nav>
-                    <Link to='/CocaCola/'>
-                        <Logo />
-                    </Link>
-                    <ul>
-                        {navLinks.map((obj, index) => (
-                            <li key={index} className={theme === 'light' ? styles.light : styles.dark}>
-                                <Link
-                                    className={theme === 'light' ? (currentPage === index ? styles.lightLink : '') : (currentPage === index ? styles.darkLink : '')}
-                                    to={obj.link}
-                                    onClick={() => dispatch(setPageId(index))}
-                                >
-                                    {obj.name}
-                                </Link>
+                <div className={styles.header__wrapper}>
+                    <nav>
+                        <Link to='/CocaCola/'>
+                            <Logo />
+                        </Link>
+                        <ul className={styles.navbar}>
+                            {navLinks.map((obj, index) => (
+                                <li key={index} className={theme === 'light' ? styles.light : styles.dark}>
+                                    <Link
+                                        className={theme === 'light' ? (currentPage === index ? styles.lightLink : '') : (currentPage === index ? styles.darkLink : '')}
+                                        to={obj.link}
+                                        onClick={() => dispatch(setPageId(index))}
+                                    >
+                                        {obj.name}
+                                    </Link>
+                                </li>
+                            ))}
+                            <li className={styles.themeSwitch} onClick={() => dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))}>
+                                {theme === 'light' ? <MoonIcon className={styles.moon} /> : <SunIcon className={styles.sun} />}
                             </li>
-                        ))}
-                        <li className={styles.themeSwitch} onClick={() => dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))}>
-                            {theme === 'light' ? <MoonIcon className={styles.moon} /> : <SunIcon className={styles.sun} />}
-                        </li>
-                    </ul>
-                </nav>
+                            <li className={styles.menuBlock} onClick={handleMenuClick}>
+                                <MenuIcon className={`${styles.menu} ${theme === 'light' ? styles.menu__light : styles.menu__dark}`} />
+                            </li>
+                        </ul>
+                    </nav>
+                    {isMenuOpened &&
+                        <ul className={styles.menuBlock__opened}>
+                            {navLinks.map((obj, index) => (
+                                <li key={index} className={theme === 'light' ? styles.light : styles.dark}>
+                                    <Link
+                                        className={theme === 'light' ? (currentPage === index ? styles.lightLink : '') : (currentPage === index ? styles.darkLink : '')}
+                                        to={obj.link}
+                                        onClick={() => dispatch(setPageId(index))}
+                                    >
+                                        {obj.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    }
+                </div>
             </div>
         </header >
     )

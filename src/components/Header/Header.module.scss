@@ -16,6 +16,12 @@
         -moz-box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
         box-shadow: 0px 2px 12px -3px rgba(18, 18, 18, 0.61);
     }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
 }
 
 header {
@@ -30,7 +36,7 @@ header {
         gap: 24px;
         align-items: center;
 
-        ul {
+        .navbar {
             display: flex;
             align-items: center;
             gap: 30px;
@@ -43,32 +49,31 @@ header {
                 color: $secondary;
             }
 
-            li:not(.themeSwitch) {
+            li:not(.themeSwitch, .menuBlock) {
                 @media screen and (max-width:660px) {
                     display: none;
                 }
             }
 
-            .light {
-
-                &:hover,
-                &Link {
-                    color: $primary;
-                }
-            }
-
-            .dark {
-
-                &:hover,
-                &Link {
-                    color: $white;
-                }
-            }
-
-            .themeSwitch {
+            .themeSwitch,
+            .menuBlock {
                 cursor: pointer;
                 width: 24px;
                 height: 24px;
+            }
+
+            .menuBlock {
+                display: none;
+
+                @media screen and (max-width:660px) {
+                    display: block;
+                }
+
+                &__opened {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
             }
 
             .moon {
@@ -88,6 +93,53 @@ header {
                 width: 24px;
                 height: 24px;
             }
+        }
+    }
+
+    .menu {
+        width: 24px;
+        height: 24px;
+
+        &__light {
+            svg path {
+                fill: $secondary;
+
+            }
+        }
+
+
+        &__dark {
+            svg path {
+                fill: $white;
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .menuBlock__opened {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+            color: $secondary;
+        }
+    }
+
+    .light {
+
+        &:hover,
+        &Link {
+            color: $primary;
+        }
+    }
+
+    .dark {
+
+        &:hover,
+        &Link {
+            color: $white;
         }
     }
 }
