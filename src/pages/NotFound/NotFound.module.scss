@@ -35,6 +35,10 @@
         flex-direction: column;
         align-items: center;
 
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
+
         &__light {
             span {
                 font-weight: 700;

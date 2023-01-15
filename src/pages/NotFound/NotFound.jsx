@@ -25,7 +25,7 @@ const NotFound = () => {
                             </p>
                             <ButtonPrimary
                                 text={'Go to the main page'}
-                                link={'/'}
+                                link={'/CocaCola/'}
                             />
                         </div>
                         <div className={`${styles.notFound__error} ${theme === 'light' ? styles.notFound__error__light : styles.notFound__error__dark}`}>

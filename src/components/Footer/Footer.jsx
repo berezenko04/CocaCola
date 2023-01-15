@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux'
 import styles from './Footer.module.scss'
 
 import Logo from '../../components/Logo/Logo'
-import { ReactComponent as TwitterIcon } from '../../assets/icons/twitter.svg'
-import { ReactComponent as YoutubeIcon } from '../../assets/icons/youtube.svg'
-import { ReactComponent as FacebookIcon } from '../../assets/icons/facebook.svg'
-import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram.svg'
+import { ReactComponent as TwitterIcon } from '../../assets/icons/socials/twitter.svg'
+import { ReactComponent as YoutubeIcon } from '../../assets/icons/socials/youtube.svg'
+import { ReactComponent as FacebookIcon } from '../../assets/icons/socials/facebook.svg'
+import { ReactComponent as InstagramIcon } from '../../assets/icons/socials/instagram.svg'
 
 
 const Footer = () => {
@@ -56,7 +56,7 @@ const Footer = () => {
                                 key={index}
                                 className={theme === 'light' ? styles.footer__socials__light : styles.footer__socials__dark}
                             >
-                                <Link to=''>{icon}</Link>
+                                <a target='_blank' href=''>{icon}</a>
                             </li>
                         ))}
                     </ul>
