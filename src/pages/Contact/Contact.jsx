@@ -22,7 +22,7 @@ export const Contact = () => {
     const contactList = [
         { title: 'Гаряча лінія:', icon: <PhoneIcon />, path: '0800-30-80-08', link: 'tel:0800-30-80-08' },
         { title: 'Пошта:', icon: <MailIcon />, path: 'ccbu@cchellenic.com', link: 'mailto:ccbu@cchellenic.com' },
-        { title: 'Веб-сайт:', icon: <ScrapIcon />, path: 'https://ua.cola-colahellenic.com/', link: 'https://ua.cola-colahellenic.com/' }
+        { title: 'Веб-сайт:', icon: <ScrapIcon />, path: 'ua.cola-colahellenic.com', link: 'https://ua.cola-colahellenic.com/' }
     ]
 
 

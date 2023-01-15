@@ -14,11 +14,25 @@
     gap: 40px;
     padding-bottom: 150px;
 
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        padding-bottom: 80px;
+    }
+
+    @media screen and (max-width: 670px) {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
     &__content {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 80px;
+
+        @media screen and (max-width: 1000px) {
+            gap: 50px;
+        }
 
         &__head {
             display: flex;
@@ -85,7 +99,7 @@
                         align-items: center;
 
                         a {
-                            font-size: 18px;
+                            font-size: 16px;
                             font-weight: 500;
                         }
 
@@ -105,6 +119,10 @@
     &__map {
         border: 0;
         width: 100%;
+
+        @media screen and (max-width: 1000px) {
+            height: 400px;
+        }
     }
 
     .icon {
