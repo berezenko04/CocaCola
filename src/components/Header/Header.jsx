@@ -20,6 +20,7 @@ const Header = () => {
     const theme = useSelector((state) => state.theme.theme);
     const scrollYOffset = useSelector((state) => state.scroll.scrollYOffset);
     const isMenuOpened = useSelector((state) => state.menu.isMenuOpened);
+    const scroll = scrollYOffset > 50;
 
     const navLinks = [
         { name: 'Головна', link: '/CocaCola/' },
@@ -32,18 +33,15 @@ const Header = () => {
     const handleMenuClick = () => {
         dispatch(setIsMenuOpened(!isMenuOpened));
     }
-
-    let scroll = scrollYOffset > 80;
-
-    const handleThemeChange = () => {
-        dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
-    }
-
+    
     useEffect(() => {
         localStorage.setItem('theme', theme);
         console.log(localStorage);
     }, [theme])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentPage])
 
 
 
@@ -67,7 +65,7 @@ const Header = () => {
                                     </Link>
                                 </li>
                             ))}
-                            <li className={styles.themeSwitch} onClick={handleThemeChange}>
+                            <li className={styles.themeSwitch} onClick={() => dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))}>
                                 {theme === 'light' ? <MoonIcon className={styles.moon} /> : <SunIcon className={styles.sun} />}
                             </li>
                             <li className={styles.menuBlock} onClick={handleMenuClick}>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -8,10 +9,13 @@ import Contact from './pages/Contact/Contact'
 import Brand from './pages/Brand/Brand'
 import NotFound from './pages/NotFound/NotFound'
 
-
 function App() {
 
-  // const test = localStorage.getItem('theme');
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme');
+    console.log('localtheme', localTheme);
+  })
+
   const theme = useSelector((state) => state.theme.theme);
 
   return (

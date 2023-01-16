@@ -107,17 +107,21 @@ header {
         }
     }
 
-    .menuBlock__opened {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .menuBlock {
 
-        li {
-            color: $secondary;
+        &__opened {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                color: $secondary;
+            }
         }
+
     }
 
     .light {
+        padding: 20px 0;
 
         &:hover,
         &Link {
@@ -126,6 +130,7 @@ header {
     }
 
     .dark {
+        padding: 20px 0;
 
         &:hover,
         &Link {

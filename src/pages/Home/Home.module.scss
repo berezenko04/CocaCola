@@ -94,6 +94,10 @@
         flex-direction: column;
         gap: 35px;
 
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
     }
 }
 
