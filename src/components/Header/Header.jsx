@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -11,7 +12,7 @@ import { setIsMenuOpened } from '../../redux/slices/menuSlice'
 import { ReactComponent as MoonIcon } from '../../assets/icons/moon.svg'
 import { ReactComponent as SunIcon } from '../../assets/icons/sun.svg'
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu-hamburger.svg'
-import { useEffect } from 'react'
+
 
 const Header = () => {
 
@@ -21,6 +22,7 @@ const Header = () => {
     const scrollYOffset = useSelector((state) => state.scroll.scrollYOffset);
     const isMenuOpened = useSelector((state) => state.menu.isMenuOpened);
     const scroll = scrollYOffset > 50;
+    const isMounted = useRef(false);
 
     const navLinks = [
         { name: 'Головна', link: '/CocaCola/' },
@@ -33,10 +35,14 @@ const Header = () => {
     const handleMenuClick = () => {
         dispatch(setIsMenuOpened(!isMenuOpened));
     }
-    
+
     useEffect(() => {
-        localStorage.setItem('theme', theme);
-        console.log(localStorage);
+        if (isMounted.current) {
+            const json = JSON.stringify(theme);
+            localStorage.setItem('theme', json);
+        }
+        isMounted.current = true;
+
     }, [theme])
 
     useEffect(() => {
